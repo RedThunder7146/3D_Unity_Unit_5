@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8830ff18a0905a64b9f2c265304d7e0c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298273
+  packageName: KCISA - T-34-85
+  packageVersion: 1.0
+  assetPath: Assets/T-34-85/Materials/M_T34_Hull_In_Detail.mat
+  uploadId: 723729

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 632192538e8f89948bc14f403f4917fe
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298273
+  packageName: KCISA - T-34-85
+  packageVersion: 1.0
+  assetPath: Assets/T-34-85/Prefab/SM_T34_Turret.prefab
+  uploadId: 723729
