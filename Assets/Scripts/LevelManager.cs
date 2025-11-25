@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     private int highScore;
     private int playerHealth;
+    private int playerScore;
 
     void Awake()
     {
@@ -37,6 +38,17 @@ public class LevelManager : MonoBehaviour
     {
         return playerHealth;
     }
-
+    public void SetPlayerScore(int score)
+    {
+        playerScore = score;
+    }
+    public void AddPlayerScore(int scoreToAdd)
+    {
+        playerScore += scoreToAdd;
+    }
+    public int GetPlayerScore()
+    {
+        return playerScore;
+    }
 
 }
