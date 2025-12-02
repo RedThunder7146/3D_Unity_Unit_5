@@ -4,9 +4,10 @@ public class LevelManager : MonoBehaviour
 {
 
     public static LevelManager instance;
-    private int highScore;
     private int playerHealth;
     private int playerScore;
+    private int highScore;
+    private int timesPlayed;
 
     void Awake()
     {
@@ -23,6 +24,36 @@ public class LevelManager : MonoBehaviour
             // as we already have one
             print("do destroy");
             Destroy(gameObject);
+        }
+    }
+    public void Start()
+    {
+        // Before reading the key, check to see if a value has been stored in it.
+        if (PlayerPrefs.HasKey("highScore") == true)
+        {
+            // the key musicVol holds a value, therefore we can
+            //retrieve it and store it in a variable
+            highScore = PlayerPrefs.GetInt("highScore");
+        }
+        else
+        {
+            // the key musicVol is null so give it a default value of 0.5f
+            PlayerPrefs.SetInt("highScore", 0);
+        }
+
+        if (PlayerPrefs.HasKey("timesPlayed") == true)
+        {
+            // the key musicVol holds a value, therefore we can
+            //retrieve it and store it in a variable
+            timesPlayed = PlayerPrefs.GetInt("timesPlayed");
+            timesPlayed += 1;
+            PlayerPrefs.SetInt("timesPlayed", timesPlayed);
+
+        }
+        else
+        {
+            // the key musicVol is null so give it a default value of 0.5f
+            PlayerPrefs.SetInt("timesPlayed", 0);
         }
     }
 
@@ -45,10 +76,28 @@ public class LevelManager : MonoBehaviour
     public void AddPlayerScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
+        SetHighScore();
     }
     public int GetPlayerScore()
     {
         return playerScore;
     }
 
+    public void SetHighScore()
+    {
+        if (playerScore > highScore)
+        {
+            highScore = playerScore;
+            PlayerPrefs.SetInt("highScore", highScore);
+        }
+    }
+
+    public int GetHighScore()
+    {
+        return highScore;
+    }
+    public int GetTimesPlayed()
+    {
+        return timesPlayed;
+    }
 }

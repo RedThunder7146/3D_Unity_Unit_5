@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    AudioSource audioSource;
+    public AudioClip sfx1;
+
     public float hSensitivity;
     public float vSensitivity;
     public Rigidbody playerRB;
@@ -12,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         LevelManager.instance.SetPlayerHealth(5);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,6 +24,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             playerRB.linearVelocity = Vector3.forward*zvel;
+            PlaySoundEffect();
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -60,5 +65,10 @@ public class PlayerScript : MonoBehaviour
         GUILayout.EndArea();
     }
 
+
+    public void PlaySoundEffect()
+    {
+        audioSource.PlayOneShot(sfx1, 0.5f);
+    }
 
 }
