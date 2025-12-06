@@ -1,7 +1,12 @@
 using UnityEngine;
 public class UIscripts : MonoBehaviour
+
+
 {
-    private void OnGUI()
+
+
+    /*
+   private void OnGUI()
     {
         int playerScore = LevelManager.instance.GetPlayerScore();
 
@@ -27,4 +32,6 @@ public class UIscripts : MonoBehaviour
         GUILayout.Label($"<size=24>{timesPlayedText}</size>");
         GUILayout.EndArea();
     }
+
+    */
 }

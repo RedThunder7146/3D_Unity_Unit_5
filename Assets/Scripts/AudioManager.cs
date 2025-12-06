@@ -1,10 +1,11 @@
 using UnityEngine;
 using System;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    AudioSource audioSource;
+    
     public Sounds[] sounds;
     void Awake()
     {
@@ -25,11 +26,19 @@ public class AudioManager : MonoBehaviour
 
         foreach (Sounds s in sounds)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
+            s.musicSource = gameObject.AddComponent<AudioSource>();
+            s.musicSource.outputAudioMixerGroup = s.musicMixer;
+            s.musicSource.clip = s.clip;
+            s.musicSource.volume = s.volume;
+            s.musicSource.pitch = s.pitch;
+            s.musicSource.loop = s.loop;
+
+            s.SFXSource = gameObject.AddComponent<AudioSource>();
+            s.SFXSource.outputAudioMixerGroup = s.SFXMixer;
+            s.SFXSource.clip = s.clip;
+            s.SFXSource.volume = s.volume;
+            s.SFXSource.pitch = s.pitch;
+            s.SFXSource.loop = s.loop;
         }
 
 
@@ -38,18 +47,29 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        PlaySoundEffect("Breathing");
+        PlayMusic("MenuTheme");
+    }
+
+    public void PlayMusic(string name)
+    {
+        Sounds s = Array.Find(sounds, sound => sound.name == name);
+        if(s==null)
+        {
+            Debug.LogWarning("Music: " + name + " not found!");
+            return;
+        }
+        s.musicSource.Play();
     }
 
     public void PlaySoundEffect(string name)
     {
         Sounds s = Array.Find(sounds, sound => sound.name == name);
-        if(s==null)
+        if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
+            Debug.LogWarning("Music: " + name + " not found!");
             return;
         }
-        s.source.Play();
+        s.SFXSource.Play();
     }
 
 

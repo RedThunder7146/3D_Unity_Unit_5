@@ -531,6 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa774b30e1892049a5bf47076a8ef68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  mainMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  volumeMenu: {fileID: 0}
+  quitMenu: {fileID: 0}
 --- !u!4 &1056598912
 Transform:
   m_ObjectHideFlags: 0

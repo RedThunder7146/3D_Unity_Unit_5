@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour
     private int playerScore;
     private int highScore;
     private int timesPlayed;
+    private string latestScene;
 
     void Awake()
     {
@@ -54,6 +56,21 @@ public class LevelManager : MonoBehaviour
         {
             // the key musicVol is null so give it a default value of 0.5f
             PlayerPrefs.SetInt("timesPlayed", 0);
+
+            Scene scene = SceneManager.GetActiveScene();
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 
@@ -100,4 +117,8 @@ public class LevelManager : MonoBehaviour
     {
         return timesPlayed;
     }
+
+
+
+
 }
