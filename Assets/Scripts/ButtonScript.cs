@@ -1,6 +1,9 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -9,6 +12,15 @@ public class ButtonScript : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject volumeMenu;
     public GameObject quitMenu;
+    public GameObject videoSettingsMenu;
+    public Toggle fullscreen;
+
+
+    void Start()
+    {
+        MainMenu();
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+    }
     public void LoadFrontend()
     {
         SceneManager.LoadScene("Frontend");
@@ -37,6 +49,7 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(true);
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
+        videoSettingsMenu.SetActive(false);
     }
 
 
@@ -46,6 +59,7 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(false);
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
+        videoSettingsMenu.SetActive(false);
 
     }
 
@@ -55,6 +69,7 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(false);
         quitMenu.SetActive(true);
         volumeMenu.SetActive(false);
+        videoSettingsMenu.SetActive(false);
 
     }
 
@@ -64,6 +79,15 @@ public class ButtonScript : MonoBehaviour
         mainMenu.SetActive(false);
         optionsMenu.SetActive(false);
         quitMenu.SetActive(false);
+        videoSettingsMenu.SetActive(false);
+    }
+    public void VideoSettingsMenu()
+    {
+        volumeMenu.SetActive(false);
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        quitMenu.SetActive(false);
+        videoSettingsMenu.SetActive(true);
     }
 
     public void QuitGame()
@@ -75,4 +99,18 @@ public class ButtonScript : MonoBehaviour
         AudioManager.instance.PlaySoundEffect("Button");
     }
 
+    public void fullScreenMode()
+    {
+        if (fullscreen.isOn == true)
+        {
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            print("Is fullscreened");
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+            print("Is not fullscreened");
+        }
+    }
+    
 }

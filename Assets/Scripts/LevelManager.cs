@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     private int playerScore;
     private int highScore;
     private int timesPlayed;
-    private string latestScene;
+    public static float brightness;
 
     void Awake()
     {
@@ -58,19 +58,6 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("timesPlayed", 0);
 
             Scene scene = SceneManager.GetActiveScene();
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 

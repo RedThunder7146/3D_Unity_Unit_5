@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class SliderScripts : MonoBehaviour
 {
+    [Header("---- AUDIO MIXER ----")]
+
+    [SerializeField] private AudioMixer MasterVolume;
+    [Header("---- MASTER VOLUME ----")]
+
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private TextMeshProUGUI masterVol;
+    [Header("---- MUSIC VOLUME ----")]
 
     [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider SFXSlider;
-    [SerializeField] private AudioMixer MasterVolume;
     [SerializeField] private TextMeshProUGUI musicVol;
+    [Header("---- SFX VOLUME ----")]
+
+    [SerializeField] private Slider SFXSlider;
     [SerializeField] private TextMeshProUGUI SFXVol;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadMusicVolume();
@@ -32,6 +39,15 @@ public class SliderScripts : MonoBehaviour
             SetSFXVolume();
         }
 
+        if (PlayerPrefs.HasKey("masterVolume"))
+        {
+            LoadMasterVolume();
+        }
+        else
+        {
+            SetMasterVolume();
+        }
+        
 
     }
     public void SetMusicVolume()
@@ -52,6 +68,14 @@ public class SliderScripts : MonoBehaviour
         SFXVol.text = sfxVolume.ToString("0%");
     }
 
+    public void SetMasterVolume()
+    {
+        float masterVolume = masterSlider.value;
+        MasterVolume.SetFloat("Master", Mathf.Log10(masterVolume) * 20);
+        PlayerPrefs.SetFloat("masterVolume", masterVolume);
+        masterVol.text = masterVolume.ToString("0%");
+    }
+
 
     public void LoadMusicVolume()
     {
@@ -67,6 +91,13 @@ public class SliderScripts : MonoBehaviour
 
         SetSFXVolume();
     }
+    public void LoadMasterVolume()
+    {
+        masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
 
+        SetMasterVolume();
+    }
+
+    
 
 }
