@@ -1,6 +1,6 @@
 using UnityEngine.Audio;
 using UnityEngine;
-
+using UnityEngine.TerrainTools;
 [System.Serializable]
 public class Sounds
 {

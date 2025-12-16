@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.TerrainTools;
 
 public class SliderScripts : MonoBehaviour
 {

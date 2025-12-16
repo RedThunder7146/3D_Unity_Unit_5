@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.Audio;
-
+using UnityEngine.TerrainTools;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
