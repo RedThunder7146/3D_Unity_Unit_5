@@ -21,10 +21,7 @@ public class SliderScripts : MonoBehaviour
 
     [SerializeField] private Slider SFXSlider;
     [SerializeField] private TextMeshProUGUI SFXVol;
-    [Header("---- BRIGHTNESS ----")]
 
-    [SerializeField] private Slider brightnessSlider;
-    [SerializeField] private TextMeshProUGUI brightnessText;
     void Start()
     {
         if (PlayerPrefs.HasKey("musicVolume"))
@@ -53,14 +50,7 @@ public class SliderScripts : MonoBehaviour
             SetMasterVolume();
         }
         
-        if (PlayerPrefs.HasKey("brightness"))
-        {
-            LoadBrightness();
-        }
-        else
-        {
-            SetBrightness();
-        }
+        
 
     }
     public void SetMusicVolume()
@@ -111,19 +101,6 @@ public class SliderScripts : MonoBehaviour
         SetMasterVolume();
     }
 
-    public void SetBrightness()
-    {
-        float brightness = brightnessSlider.value;
-        Screen.brightness = brightness;
-        PlayerPrefs.SetFloat("brightness", brightness);
-        brightnessText.text = brightness.ToString("0%");
-    }
-
-    public void LoadBrightness()
-    {
-        brightnessSlider.value = PlayerPrefs.GetFloat("brightness");
-
-        SetBrightness();
-    }
+    
 
 }
