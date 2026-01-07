@@ -45,10 +45,6 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        PlayMusic("MenuTheme");
-    }
 
     public void PlayMusic(string name)
     {
@@ -72,5 +68,24 @@ public class AudioManager : MonoBehaviour
         s.SFXSource.Play();
     }
 
-
+    public void StopSoundEffect(string name)
+    {
+        Sounds s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Music: " + name + " not found!");
+            return;
+        }
+        s.SFXSource.Stop();
+    }
+    public void StopMusic(string name)
+    {
+        Sounds s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Music: " + name + " not found!");
+            return;
+        }
+        s.musicSource.Stop();
+    }
 }

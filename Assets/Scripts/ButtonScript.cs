@@ -18,6 +18,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject startMenu;
     public GameObject difficultyMenu;
     public GameObject start;
+    public GameObject controls;
     public Toggle fullscreen;
     public CinemachineCamera MenuCamera;
     public CinemachineCamera OptionsCamera;
@@ -66,8 +67,14 @@ public class ButtonScript : MonoBehaviour
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         start.SetActive(true);
         startLoading = true;
+        AudioManager.instance.PlaySoundEffect("EngineStart");
+
+        StartCoroutine("StartGameLoading");
+
+
     }
     public void OptionsMenu()
     {
@@ -78,6 +85,7 @@ public class ButtonScript : MonoBehaviour
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         OptionsCamera.Priority = 1;
         MenuCamera.Priority = 0;
         PlayCamera.Priority = 0;
@@ -90,6 +98,7 @@ public class ButtonScript : MonoBehaviour
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         OptionsCamera.Priority = 1;
         MenuCamera.Priority = 0;
         PlayCamera.Priority = 0;
@@ -108,6 +117,7 @@ public class ButtonScript : MonoBehaviour
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         OptionsCamera.Priority = 0;
         MenuCamera.Priority = 1;
         PlayCamera.Priority = 0;
@@ -120,6 +130,7 @@ public class ButtonScript : MonoBehaviour
         volumeMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         OptionsCamera.Priority = 0;
         MenuCamera.Priority = 1;
         PlayCamera.Priority = 0;
@@ -139,6 +150,7 @@ public class ButtonScript : MonoBehaviour
         quitMenu.SetActive(true);
         volumeMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         OptionsCamera.Priority = 0;
         MenuCamera.Priority = 1;
         PlayCamera.Priority = 0;
@@ -154,6 +166,7 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
     }
     public void VideoSettingsMenu()
     {
@@ -164,6 +177,7 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(true);
+        controls.SetActive(false);
     }
     public void StartMenuFromMenu()
     {
@@ -173,6 +187,7 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
         OptionsCamera.Priority = 0;
         MenuCamera.Priority = 0;
         PlayCamera.Priority = 1;
@@ -188,6 +203,19 @@ public class ButtonScript : MonoBehaviour
         optionsMenu.SetActive(false);
         quitMenu.SetActive(false);
         videoSettingsMenu.SetActive(false);
+        controls.SetActive(false);
+    }
+
+    public void ControlMenu()
+    {
+        difficultyMenu.SetActive(false);
+        startMenu.SetActive(false);
+        volumeMenu.SetActive(false);
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        quitMenu.SetActive(false);
+        videoSettingsMenu.SetActive(false);
+        controls.SetActive(true);
     }
     public void QuitGame()
     {
@@ -230,4 +258,11 @@ public class ButtonScript : MonoBehaviour
         startMenu.SetActive(true);
     }
 
+
+    public IEnumerator StartGameLoading()
+    {
+        yield return new WaitForSecondsRealtime(5);
+        SceneManager.LoadScene(1);
+        AudioManager.instance.StopMusic("MainTheme");
+    }
 }
