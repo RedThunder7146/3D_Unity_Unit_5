@@ -21,6 +21,9 @@ public class SliderScripts : MonoBehaviour
 
     [SerializeField] private Slider SFXSlider;
     [SerializeField] private TextMeshProUGUI SFXVol;
+    [Header("---- Mute Button ----")]
+
+    [SerializeField] private Toggle muteMusic; 
 
     void Start()
     {
@@ -101,6 +104,20 @@ public class SliderScripts : MonoBehaviour
         SetMasterVolume();
     }
 
-    
+    public void MuteMusic()
+    {
+
+        float music = PlayerPrefs.GetFloat("musicvolume");
+
+        if(muteMusic.isOn == true)
+        {
+            MasterVolume.SetFloat("music", Mathf.Log10(0.0001f) * 20);
+        }
+        else
+        {
+            MasterVolume.SetFloat("music", Mathf.Log10(music) * 20);
+        }
+
+    }
 
 }

@@ -23,6 +23,7 @@ public class ButtonScript : MonoBehaviour
     public CinemachineCamera MenuCamera;
     public CinemachineCamera OptionsCamera;
     public CinemachineCamera PlayCamera;
+
     public static bool startLoading;
 
 
@@ -217,6 +218,18 @@ public class ButtonScript : MonoBehaviour
         videoSettingsMenu.SetActive(false);
         controls.SetActive(true);
     }
+
+    public void PlayCalmingMusic()
+    {
+        AudioManager.instance.PlayMusic("CalmMusic");
+    }
+
+    public void StopCalmingMusic()
+    {
+        AudioManager.instance.StopMusic("CalmMusic");
+    }
+
+
     public void QuitGame()
     {
         Application.Quit();
@@ -239,6 +252,7 @@ public class ButtonScript : MonoBehaviour
             print("Is not fullscreened");
         }
     }
+    
 
     public IEnumerator MenuWait()
     {
@@ -263,6 +277,6 @@ public class ButtonScript : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(5);
         SceneManager.LoadScene(1);
-        AudioManager.instance.StopMusic("MainTheme");
+        AudioManager.instance.StopMusic("MenuTheme");
     }
 }
