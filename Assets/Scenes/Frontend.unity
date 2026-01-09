@@ -3947,7 +3947,7 @@ MonoBehaviour:
   musicVol: {fileID: 345899449}
   SFXSlider: {fileID: 430423558}
   SFXVol: {fileID: 934640358}
-  muteMusic: {fileID: 0}
+  muteMusic: {fileID: 1285842120}
 --- !u!114 &330024552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4953,12 +4953,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SliderScripts
   MasterVolume: {fileID: 24100000, guid: 1d5e1b5ab0adaba41b5dc84e9e918262, type: 2}
   masterSlider: {fileID: 330024552}
-  masterVol: {fileID: 0}
+  masterVol: {fileID: 1035171485}
   musicSlider: {fileID: 2111680473}
   musicVol: {fileID: 345899449}
   SFXSlider: {fileID: 430423558}
   SFXVol: {fileID: 934640358}
-  muteMusic: {fileID: 0}
+  muteMusic: {fileID: 1285842120}
 --- !u!1 &453360217
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,13 +8791,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SliderScripts
   MasterVolume: {fileID: 24100000, guid: 1d5e1b5ab0adaba41b5dc84e9e918262, type: 2}
-  masterSlider: {fileID: 0}
-  masterVol: {fileID: 0}
-  musicSlider: {fileID: 0}
-  musicVol: {fileID: 0}
-  SFXSlider: {fileID: 0}
-  SFXVol: {fileID: 0}
-  muteMusic: {fileID: 0}
+  masterSlider: {fileID: 330024552}
+  masterVol: {fileID: 1035171485}
+  musicSlider: {fileID: 2111680473}
+  musicVol: {fileID: 345899449}
+  SFXSlider: {fileID: 430423558}
+  SFXVol: {fileID: 934640358}
+  muteMusic: {fileID: 1285842120}
 --- !u!1001 &697357107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17415,12 +17415,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SliderScripts
   MasterVolume: {fileID: 24100000, guid: 1d5e1b5ab0adaba41b5dc84e9e918262, type: 2}
-  masterSlider: {fileID: 0}
-  masterVol: {fileID: 0}
-  musicSlider: {fileID: 0}
-  musicVol: {fileID: 0}
-  SFXSlider: {fileID: 0}
-  SFXVol: {fileID: 0}
+  masterSlider: {fileID: 330024552}
+  masterVol: {fileID: 1035171485}
+  musicSlider: {fileID: 2111680473}
+  musicVol: {fileID: 345899449}
+  SFXSlider: {fileID: 430423558}
+  SFXVol: {fileID: 934640358}
   muteMusic: {fileID: 1285842120}
 --- !u!114 &1285842120
 MonoBehaviour:
@@ -26984,12 +26984,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SliderScripts
   MasterVolume: {fileID: 24100000, guid: 1d5e1b5ab0adaba41b5dc84e9e918262, type: 2}
   masterSlider: {fileID: 330024552}
-  masterVol: {fileID: 0}
+  masterVol: {fileID: 1035171485}
   musicSlider: {fileID: 2111680473}
   musicVol: {fileID: 345899449}
   SFXSlider: {fileID: 430423558}
-  SFXVol: {fileID: 0}
-  muteMusic: {fileID: 0}
+  SFXVol: {fileID: 934640358}
+  muteMusic: {fileID: 1285842120}
 --- !u!1 &2119781810
 GameObject:
   m_ObjectHideFlags: 0

@@ -63,6 +63,7 @@ public class SliderScripts : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", mVolume);
 
         musicVol.text = mVolume.ToString("0%");
+        muteMusic.isOn = false;
     }
 
     public void SetSFXVolume()
@@ -86,7 +87,7 @@ public class SliderScripts : MonoBehaviour
     public void LoadMusicVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-
+        MasterVolume.SetFloat("music", Mathf.Log10(PlayerPrefs.GetFloat("musicVolume")) * 20);
         SetMusicVolume();
 
     }
@@ -94,20 +95,20 @@ public class SliderScripts : MonoBehaviour
     public void LoadSFXVolume()
     {
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-
+        MasterVolume.SetFloat("SFX", Mathf.Log10(PlayerPrefs.GetFloat("SFXVolume")) * 20);
         SetSFXVolume();
     }
     public void LoadMasterVolume()
     {
         masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
-
+        MasterVolume.SetFloat("Master", Mathf.Log10(PlayerPrefs.GetFloat("masterVolume")) * 20);
         SetMasterVolume();
     }
 
     public void MuteMusic()
     {
 
-        float music = PlayerPrefs.GetFloat("musicvolume");
+        float music = PlayerPrefs.GetFloat("musicVolume");
 
         if(muteMusic.isOn == true)
         {
