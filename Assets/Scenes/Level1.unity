@@ -340,7 +340,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1056598911}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: LoadFrontend
+        m_MethodName: LoadMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1056598911}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -667,19 +679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa774b30e1892049a5bf47076a8ef68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
-  mainMenu: {fileID: 0}
-  optionsMenu: {fileID: 0}
-  volumeMenu: {fileID: 0}
-  quitMenu: {fileID: 0}
-  videoSettingsMenu: {fileID: 0}
-  startMenu: {fileID: 0}
-  difficultyMenu: {fileID: 0}
-  start: {fileID: 0}
-  controls: {fileID: 0}
-  fullscreen: {fileID: 0}
-  MenuCamera: {fileID: 0}
-  OptionsCamera: {fileID: 0}
-  PlayCamera: {fileID: 0}
 --- !u!4 &1056598912
 Transform:
   m_ObjectHideFlags: 0

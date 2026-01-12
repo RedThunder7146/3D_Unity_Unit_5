@@ -86,22 +86,25 @@ public class SliderScripts : MonoBehaviour
 
     public void LoadMusicVolume()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        MasterVolume.SetFloat("music", Mathf.Log10(PlayerPrefs.GetFloat("musicVolume")) * 20);
+        float music = PlayerPrefs.GetFloat("musicVolume");
+        musicSlider.value = music;
+        MasterVolume.SetFloat("music", Mathf.Log10(music) * 20);
         SetMusicVolume();
 
     }
 
     public void LoadSFXVolume()
     {
-        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-        MasterVolume.SetFloat("SFX", Mathf.Log10(PlayerPrefs.GetFloat("SFXVolume")) * 20);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume");
+        SFXSlider.value = sfx;
+        MasterVolume.SetFloat("SFX", Mathf.Log10(sfx) * 20);
         SetSFXVolume();
     }
     public void LoadMasterVolume()
     {
-        masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
-        MasterVolume.SetFloat("Master", Mathf.Log10(PlayerPrefs.GetFloat("masterVolume")) * 20);
+        float master = PlayerPrefs.GetFloat("masterVolume");
+        masterSlider.value = master;
+        MasterVolume.SetFloat("Master", Mathf.Log10(master) * 20);
         SetMasterVolume();
     }
 
